@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <div id={styles.formContainer}>
       <div className={styles.heroSection}>
-        <h3>Login to your profile.</h3>
+        <h3>Login to your account.</h3>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis,
           modi! Dolorem sequi quia fuga nulla.
@@ -18,8 +18,8 @@ const Login = () => {
       <div className={styles.profileForm}>
         <div className={styles.form}>
           <div className={styles.field}>
-            <p>Email *</p>
-            <input type="email" placeholder="Ex. johndoe@gmail.com" />
+            <p>PRN Number *</p>
+            <input type="text" placeholder="Ex. 14785236K" />
           </div>
 
           <div className={styles.field}>
@@ -49,7 +49,7 @@ const Login = () => {
             Dont't have an account! <a href="/signup">Click here</a>
           </span>
           <br />
-          <span>
+          <span style={{ marginTop: '-15px' }}>
             Forgot password! <a href="/forgot">Click here</a>
           </span>
         </div>

@@ -5,8 +5,8 @@ const HeroSection = () => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <span>Find a Perfect</span>
-        <h2>Match</h2>
+        <span>Connect With Students &amp; Alumnis</span>
+        <h2>ModernConnect</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
           distinctio iusto harum impedit maxime doloribus unde voluptatum ipsum,
@@ -14,8 +14,8 @@ const HeroSection = () => {
         </p>
 
         <div className={styles.buttons}>
-          <button className={styles.filled}>Explore Developer</button>
-          <button className={styles.outlined}>Search Opportunity</button>
+          <button className={styles.filled}>Explore Peers</button>
+          <button className={styles.outlined}>Create account</button>
         </div>
       </div>
       <img src="/images/hero_image.svg" alt="hero_image" />

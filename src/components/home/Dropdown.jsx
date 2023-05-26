@@ -36,13 +36,28 @@ const Dropdown = () => {
   const [alumni, setAlumni] = useState('');
   const [technology, setTechnology] = useState('');
 
+  const setEmpty = () => {
+    setStudent('');
+    setAlumni('');
+    setTechnology('');
+  };
+
   const handleOpenDropdown1 = () => {
+    setOpenDropdown2(false);
+    setOpenDropdown3(false);
+    setEmpty();
     setOpenDropdown1(!openDropdown1);
   };
   const handleOpenDropdown2 = () => {
+    setOpenDropdown1(false);
+    setOpenDropdown3(false);
+    setEmpty();
     setOpenDropdown2(!openDropdown2);
   };
   const handleOpenDropdown3 = () => {
+    setOpenDropdown2(false);
+    setOpenDropdown1(false);
+    setEmpty();
     setOpenDropdown3(!openDropdown3);
   };
 
@@ -50,7 +65,7 @@ const Dropdown = () => {
     <div className={styles.dropdownContainer}>
       <div className={styles.dropdown}>
         <div className={styles.dropdownWrapper}>
-          <div className={styles.dropdownHeading}>
+          <div className={styles.dropdownHeading} onClick={handleOpenDropdown1}>
             <div>
               <h4>Student</h4>
               <p>Which student you are looking for?</p>
@@ -80,7 +95,7 @@ const Dropdown = () => {
             <div className={styles.dropdownContent}>
               <input
                 type="text"
-                placeholder="Type to search"
+                placeholder="Type to branch search"
                 value={student}
                 onChange={(e) => setStudent(e.target.value)}
               />
@@ -100,7 +115,7 @@ const Dropdown = () => {
         <div className={styles.divider}></div>
 
         <div className={styles.dropdownWrapper}>
-          <div className={styles.dropdownHeading}>
+          <div className={styles.dropdownHeading} onClick={handleOpenDropdown2}>
             <div>
               <h4>Alumni</h4>
               <p>Which alumni you are looking for?</p>
@@ -130,7 +145,7 @@ const Dropdown = () => {
             <div className={styles.dropdownContent}>
               <input
                 type="text"
-                placeholder="Type to search"
+                placeholder="Type to branch search"
                 value={alumni}
                 onChange={(e) => setAlumni(e.target.value)}
               />
@@ -150,10 +165,10 @@ const Dropdown = () => {
         <div className={styles.divider}></div>
 
         <div className={styles.dropdownWrapper}>
-          <div className={styles.dropdownHeading}>
+          <div className={styles.dropdownHeading} onClick={handleOpenDropdown3}>
             <div>
-              <h4>Technology</h4>
-              <p>Which technology you are looking for?</p>
+              <h4>Skill</h4>
+              <p>Which skill you are looking for?</p>
             </div>
             {openDropdown3 ? (
               <i
@@ -180,7 +195,7 @@ const Dropdown = () => {
             <div className={styles.dropdownContent}>
               <input
                 type="text"
-                placeholder="Type to search"
+                placeholder="Type skill to search"
                 value={technology}
                 onChange={(e) => setTechnology(e.target.value)}
               />
@@ -200,7 +215,11 @@ const Dropdown = () => {
         <div className={styles.divider}></div>
 
         <button className={styles.search}>
-          <i className="fa-solid fa-magnifying-glass"></i>
+          Search
+          <i
+            className="fa-solid fa-magnifying-glass"
+            style={{ marginLeft: '10px', fontSize: '12px' }}
+          ></i>
         </button>
       </div>
     </div>

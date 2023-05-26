@@ -31,6 +31,7 @@ const Signup = () => {
 
   const [openDropdown, setOpenDropdown] = useState(false);
   const [technology, setTechnology] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const [accountType, setAccounType] = useState('Student');
 
@@ -51,7 +52,7 @@ const Signup = () => {
   return (
     <div id={styles.formContainer}>
       <div className={styles.heroSection}>
-        <h3>Create your profile.</h3>
+        <h3>Create your account.</h3>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis,
           modi! Dolorem sequi quia fuga nulla.
@@ -108,6 +109,11 @@ const Signup = () => {
             </div>
 
             <div className={styles.field}>
+              <p>PRN Number *</p>
+              <input type="text" placeholder="Ex. 14785236K" />
+            </div>
+
+            <div className={styles.field}>
               <p>Personal email *</p>
               <input type="email" placeholder="Personal email" />
             </div>
@@ -149,6 +155,17 @@ const Signup = () => {
                 <div className={styles.field}>
                   <p>Company where you are working *</p>
                   <input type="text" placeholder="Ex. Accenture, TCS" />
+                </div>
+                <div className={styles.field}>
+                  <p>Current position in company *</p>
+                  <input
+                    type="text"
+                    placeholder="Ex. Software Developer, Cloud Developer, Tester"
+                  />
+                </div>
+                <div className={styles.field}>
+                  <p>Experience *</p>
+                  <input type="text" placeholder="Ex. 7 years " />
                 </div>
                 <div className={styles.row1}>
                   <div className={styles.field}>
@@ -230,6 +247,7 @@ const Signup = () => {
                           onClick={() => {
                             skills.splice(skills.indexOf(skill), 1);
                             document.getElementById(skill).remove();
+                            console.log(skills);
                           }}
                         ></i>
                       </span>
@@ -265,7 +283,7 @@ const Signup = () => {
               />
               {technologies
                 .filter((tech) =>
-                  tech.toLowerCase().includes(technology.toLowerCase())
+                  tech.toLowerCase().includes(technology?.toLowerCase())
                 )
                 .map((technology) => (
                   <span
@@ -321,6 +339,29 @@ const Signup = () => {
                   </div>
                   <input type="text" placeholder="Ex. username" />
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.section}>
+            <div className={styles.field}>
+              <p>Password *</p>
+              <div className={styles.password}>
+                <input
+                  type={showPassword ? `text` : `password`}
+                  placeholder="Password"
+                />
+                {showPassword ? (
+                  <i
+                    class="fa-solid fa-eye-slash"
+                    onClick={() => setShowPassword(!showPassword)}
+                  ></i>
+                ) : (
+                  <i
+                    class="fa-solid fa-eye"
+                    onClick={() => setShowPassword(!showPassword)}
+                  ></i>
+                )}
               </div>
             </div>
             <button>Signup</button>
