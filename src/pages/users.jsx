@@ -34,7 +34,8 @@ const users = () => {
       student: true,
     },
     {
-      image: 'https://www.mwallpapers.com/download-image/2047/1630x2173',
+      image:
+        'https://lh3.googleusercontent.com/evg8hy1Eb3ny8mjLscfthIS_OFV84moiQmRe8R03xCVkXCDGPpmBSVSDaAwk4FJAcX9_',
       name: 'Ajay More',
       bio: 'Web Developer | Android Developer',
       branch: 'Computer Engineering',
@@ -49,24 +50,6 @@ const users = () => {
       branch: 'E & TC Engineering',
       skills: ['React', 'Javascript', 'Maven'],
       student: false,
-    },
-    {
-      image:
-        'https://w0.peakpx.com/wallpaper/166/790/HD-wallpaper-virat-kohli.jpg',
-      name: 'Sarvesh Joshi',
-      bio: 'Web Developer | Backend Developer',
-      branch: 'Information Technology',
-      skills: ['Python', 'Django', 'CPP', 'MySQL'],
-      student: true,
-    },
-    {
-      image:
-        'https://w0.peakpx.com/wallpaper/166/790/HD-wallpaper-virat-kohli.jpg',
-      name: 'Sarvesh Joshi',
-      bio: 'Web Developer | Backend Developer',
-      branch: 'Information Technology',
-      skills: ['Python', 'Django', 'CPP', 'MySQL'],
-      student: true,
     },
   ];
   return (
